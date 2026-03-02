@@ -51,7 +51,7 @@ public:
 				exit(0);
 			}
 			buff[recvnums] = 0;
-			std::cout << "[" << "Client Ssy" << "]" << ":" << buff << std::endl;
+			std::cout << "[" << "Client Say" << "]" << ":" << buff << std::endl;
 
 			sendto(_socketfd, buff, recvnums, 0, (const struct sockaddr *)&clientaddr, addrlen);
 		}
@@ -59,7 +59,7 @@ public:
 	}
 	~EchoServer()
 	{
-		_isRunning = true;
+		_isRunning = false;
 	}
 
 private:
