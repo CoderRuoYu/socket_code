@@ -53,7 +53,7 @@ public:
 			buff[recvnums] = 0;
 			std::cout << "[" << "Client Ssy" << "]" << ":" << buff << std::endl;
 
-			sendto(_socketfd, buff, recvnums, 0, (struct sockadd *)&clientaddr, addrlen);
+			sendto(_socketfd, buff, recvnums, 0, (const struct sockaddr *)&clientaddr, addrlen);
 		}
 		_isRunning = false;
 	}

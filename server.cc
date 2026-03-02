@@ -3,7 +3,7 @@
 
 void Usage(std::string filename)
 {
-    std::cout << filename << ' ' << "ip" << ' ' << "port" << std::endl;
+    std::cout << "USAGE:" << filename << ' ' << "ip" << ' ' << "port" << std::endl;
 }
 int main(int argc, char **argv)
 {
@@ -14,7 +14,7 @@ int main(int argc, char **argv)
         exit(0);
     }
     std::string serverip(argv[1]);
-    uint16_t serverport = std::stoi(aggv[2]);
+    uint16_t serverport = std::stoi(argv[2]);
     auto p = std::make_unique<EchoServer>(serverip, serverport);
     p->Init();
     p->Start();
